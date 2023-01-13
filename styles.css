@@ -1,0 +1,555 @@
+:root {
+    --main-color: #111836;
+    --main-color-hover: #5e5eff;
+    --accent-color: #4eccd8;
+    --title-underline: blue;
+    --text-white: #fff;
+    --decorative-white: #fff;
+    
+    /* --accent-color: #3da9b3; */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--text-white);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--main-color-hover);
+}
+
+::-webkit-scrollbar-track{
+    border:1px var(--decorative-white) solid;
+    border-radius:8px;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Orbitron', 'Segoe UI';
+    /* font-family: 'Montserrat', 'Segoe UI'; */
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+} */
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    /* background-color: var(--main-color-hover); */
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-color);
+    color: var(--text-white);
+    padding: 12px;
+    width: 60px;
+    height: 100%;
+    overflow: hidden;
+    z-index: 10;
+    transition: width 200ms ease-in-out;
+}
+
+nav .name-container {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+nav .name-container .initials {
+    font-size: 20px;
+    margin-right: 12px;
+    outline: 2px solid var(--decorative-white);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+nav .name-container .full-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+nav .close-menu-btn {
+    display: none;
+    text-align: right;
+    /* font-size: 2rem; */
+}
+
+/* nav .link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+nav .link-container li {
+    width: 100%;
+} */
+
+nav .link-container li a {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 12px 4px;
+    border-radius: 8px;
+}
+
+nav .link-container li a:hover {
+    background-color: var(--main-color-hover);
+}
+
+
+nav .link-container li a i {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+}
+
+nav .menu-btn {
+    display: none;
+}
+
+main {
+    margin-left: 6rem;
+    padding: 3rem 0 5rem 0;
+    width: 90%;
+    height: 100%;
+}
+
+main .page-title {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 2rem;
+}
+
+main h2 {
+    color: var(--main-color);
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+main .page-title .title-underline {
+    width: 100%;
+    height: 8px;
+    background: var(--accent-color);
+    /* background-color: var(--title-underline); */
+}
+
+main .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    row-gap: 2rem;
+}
+
+main .grid-container .media-image {
+    /* width: 100%; */
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+main .grid-container .media-image .link-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 109, 0.7); /* main color rgba */
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 200ms ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-overlay a {
+    background-color: var(--main-color-hover);
+    color: var(--text-white);
+    padding: 15px 30px;
+    border-radius: 8px;
+}
+
+main .grid-container .media-image:hover .link-overlay {
+    height: 100%;
+}
+
+
+/* email design page */
+
+main .email-grid-container {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem; 
+}
+
+main .email-grid-container .media-image {
+    /* width: 60%; */
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    outline: 2px solid var(--main-color);
+    margin: 0 auto;
+}
+
+main .email-grid-container .media-image img {
+    cursor: pointer;
+    margin: 0 auto;
+    /* height: inherit; */
+}
+
+.zoomed-picture-email {
+    height: inherit;
+}
+/* ------------------- */
+
+/* illustrator page */
+main .illustrator-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    row-gap: 2rem;
+}
+
+main .illustrator-container .media-image {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+}
+/* ---------------- */
+
+/* Resume page */
+.resume-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resume-container .about-me {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* padding-right: 10rem; */
+}
+
+.resume-container .about-me .about-me-description {
+    max-width: 700px;
+}
+
+.resume-container .about-me .about-me-description p {
+    margin-bottom: 24px;
+}
+
+.resume-container .about-me .about-me-description .resume-pdf {
+    cursor: pointer;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 0;
+    background-color: var(--main-color-hover);
+    color: var(--text-white);
+}
+
+.resume-container .about-me .about-me-description .resume-pdf:hover {
+    background-color: var(--main-color);
+}
+
+.resume-container .about-me .about-quick-skills {
+    padding: 0 40px;
+}
+
+.resume-container .about-me .about-quick-skills ul li,
+.resume-container .education-block .school-name .related-coursework .coursework-list ul li {
+    list-style-type: square;
+}
+
+.resume-container .education-block {
+    margin-top: 60px;
+    grid-column: 1 / 4;
+}
+
+.resume-container .education-block h3 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.resume-container .education-block .school-name {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 20px;
+}
+
+.resume-container .education-block .school-name .school-year-name {
+    width: 230px;
+}
+
+.resume-container .education-block .school-name .related-coursework .coursework-list {
+    display: flex;
+    column-gap: 8rem;
+}
+
+.resume-container .education-block .school-name .related-coursework .related-coursework-header,
+.resume-container .education-block .school-name .school-year-name .class-year {
+    font-weight: bold;
+}
+
+.zoom-image {
+    background-color: rgba(0, 0, 109, 0.7);
+    color: var(--text-white);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 20;
+
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.zoom-image.show-zoom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ------------------ */
+
+
+
+@media screen and (min-width: 1025px) {
+    nav:hover {
+        width: 250px;
+    }
+
+    nav:hover .link-container li a p {
+        /* visibility: hidden; */
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    nav {
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        padding: 16px;
+        flex-direction: row;
+        align-items: center;
+        overflow: unset;
+    }
+
+    nav .name-container {
+        margin-right: auto;
+    }
+
+    nav .link-container {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 3rem;
+        background-color: rgba(0, 0, 109, 0.7); /* main color rgba */
+        width: 100%;
+        z-index: 10;
+        transform: translateY(-100%);
+        transition: transform 200ms ease-in;
+        /* height: 100vh; */
+    }
+
+    nav .link-container.show {
+        transform: translateY(0);
+        top: 0;
+    }
+
+    /* nav .link-container li, nav .link-container li a {
+        font-size: 3rem;
+    } */
+
+    nav .link-container li a {
+        padding: 12px 20px;
+    }
+
+    nav .link-container .close-menu {
+        display: block;
+    }
+
+    nav .name-container {
+        margin-bottom: unset;
+    }
+
+    nav .menu-btn {
+        display: block;
+        font-size: 2rem;
+    }
+
+    nav .close-menu-btn {
+        display: block;
+        text-align: right;
+        font-size: 2rem;
+    }
+
+    main {
+        margin: 24px auto;
+        /* background-color: red; */
+        /* margin-left: unset; */
+        /* margin-top: 62px; */
+    }
+
+        
+    main .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* illustrator page */
+    main .illustrator-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        row-gap: 2rem;
+    }
+    /* ---------------- */
+
+    /* resume page */
+    .resume-container .education-block .school-name .related-coursework .coursework-list {
+        column-gap: 2rem;
+    }
+    /* ----------------- */
+}
+
+@media screen and (max-width: 768px) {
+    main .page-title {
+        margin: 0 auto 2rem;
+    }
+
+    main h2 {
+        font-size: 3rem;
+    }
+
+    /* email design page */
+    main .email-grid-container {
+        /* display: grid; */
+        grid-template-columns: 1fr 1fr;
+        row-gap: 1rem; 
+    }
+
+    
+    /* ----------------- */
+
+    /* illustrator page */
+    main .illustrator-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        row-gap: 2rem;
+    }
+    /* ---------------- */
+
+    /* resume page */
+    .resume-container .education-block .school-name {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-container .education-block .school-name .related-coursework .coursework-list,
+    .resume-container .about-me .about-quick-skills ul {
+        margin-left: 1rem;
+    }
+    /* ---------------- */
+}
+
+@media screen and (max-width: 540px) {
+    main h2 {
+        font-size: 2rem;
+    }
+
+    main .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* email design page */
+    main .email-grid-container {
+        /* display: grid; */
+        grid-template-columns: 1fr;
+        row-gap: 1rem; 
+    }
+
+    /* ----------------- */
+
+    /* resume page */
+    .resume-container .about-me {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        /* padding-right: 10rem; */
+    }
+
+    .resume-container .about-me .about-quick-skills {
+        padding: 0;
+    }
+
+    .resume-container .education-block .school-name .related-coursework .coursework-list {
+        flex-direction: column;
+    }
+    /* ------------ */
+}
+
+@media only screen and (orientation: landscape) {
+    nav .link-container {
+        font-size: 1rem;
+    }
+
+    .zoom-image {
+        padding: 4rem;
+    }
+}
