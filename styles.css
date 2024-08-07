@@ -410,6 +410,10 @@ main .portfolio .tab-container .tab-headers {
 }
 /* zOOM-IMAGE-CONTAINER END */
 
+@media (max-width: 1465px) {
+    main .about .left-side h1 {
+        font-size: 3rem;
+}
 
 @media (max-width: 1250px) {
     main .about .responsive-double-column {
