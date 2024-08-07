@@ -428,6 +428,7 @@ main .portfolio .tab-container .tab-headers {
 
     main .about .left-side h1 {
         margin: auto;
+        font-size: 4rem;
     }
 
     .tab-container .tab-content {
