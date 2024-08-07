@@ -36,6 +36,7 @@ img {
 body {
     background-color: var(--body-color);
     color: #fff;
+    font-size: 1.15rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.8;
 }
@@ -201,9 +202,22 @@ main .about .right-side {
 
 main .about .right-side p {
     margin-bottom: .5rem;
-    font-size: 2rem;
+    /* font-size: 2rem; */
     font-weight: bold;
     line-height: 1.25;
+}
+
+.right-side-header {
+    font-size: 2rem;
+}
+
+.yt-link {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+.yt-link a {
+    color: #39c909;
 }
 
 main .about .resume-pdf {
@@ -306,6 +320,13 @@ main .resume .resume-grid .resume-item .school-classes li::before {
     gap: 1rem;
     border-top: none;
     animation: fadeEffect 400ms;
+}
+
+.tab-container .tab-content .yt-link {
+    grid-column: span 3;
+    display: inline-flex;
+    justify-content: center;
+    gap: .5rem;
 }
 
 @keyframes fadeEffect {
